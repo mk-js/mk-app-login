@@ -13,8 +13,6 @@ function initMockData() {
             id: 1,
             mobile: 13334445556,
             password: '1',
-
-            
         }]
     }
 }
