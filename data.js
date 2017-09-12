@@ -127,7 +127,7 @@ export function getInitState() {
 			form: {
 				password: '',
 				mobile: window.localStorage['mobile'] || '',
-				remember: !!window.localStorage['remember']
+				remember: !!window.localStorage['remember'],
 			},
 			other: {
 				error: {}
