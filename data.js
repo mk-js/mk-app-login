@@ -74,6 +74,8 @@ export function getMeta() {
 					children: [{
 						name: 'remember',
 						component: 'Checkbox',
+						checked: '{{data.form.remember}}',
+						onChange: `{{(e)=>$fieldChange('data.form.remember', e.target.checked)}}`,
 						children: '记住我'
 					}, {
 						name: 'forgot',
@@ -122,7 +124,11 @@ export function getMeta() {
 export function getInitState() {
 	return {
 		data: {
-			form: { user: '', password: '' },
+			form: {
+				password: '',
+				mobile: window.localStorage['mobile'] || '',
+				remember: !!window.localStorage['remember']
+			},
 			other: {
 				error: {}
 			}
