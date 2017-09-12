@@ -31,6 +31,13 @@ class action {
         const response = await this.webapi.user.login(form)
         this.metaAction.context.set('currentUser', response)
 
+        if (form.remember) {
+            localStorage['remember'] = '1'
+            localStorage['mobile'] = form.mobile
+        } else {
+            localStorage['remember'] = ''
+            localStorage['mobile'] = ''
+        }
         if (this.component.props.onRedirect && this.config.goAfterLogin) {
             this.component.props.onRedirect(this.config.goAfterLogin)
         }
